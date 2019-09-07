@@ -1,0 +1,24 @@
+                                                             ASSIGNMENT 2
+                                                                                                        KOMARAPU SRI ASLEESHA,
+                                                                                                           18116039,ECE,O5
+
+
+
+1.Write a SimpleRisc assembly program to find the Ramanujan number, the smallest number that is a sum of two cubes in two different ways. 
+
+
+mov r0,10
+mov r1,9
+mul r2,r0,r0
+mul r3,r2,r0
+mul r4,r1,r1
+mul r5,r4,r1
+add r6,r3,r5
+
+mov r7,12
+mov r8,1
+mul r9,r7,r7
+mul r10,r9,r7
+mul r11,r8,r8
+mul r12,r11,r8
+add r13,r10,r12
