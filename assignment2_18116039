@@ -5,20 +5,33 @@
 
 
 1.Write a SimpleRisc assembly program to find the Ramanujan number, the smallest number that is a sum of two cubes in two different ways. 
+mov r0,0
+mov flag,r0
+mov a,1
+.loop:
+    mov b,a
+    mov c,a
+    .loop1:
+.loop2:
+mul r1,b,a
+mul r2,r1,b
+mul r3, c,c
+mul r4,r3,c
+mov r5,r0
+add r5,r2,r4
+cmp r5,a
+beq.flagIncrease
+sub c,c,1
+cmp c,r0
+bgt.loop2
+sub b,b,r0
+bgt.loop1
+cmp flag,2
 
-
-mov r0,10
-mov r1,9
-mul r2,r0,r0
-mul r3,r2,r0
-mul r4,r1,r1
-mul r5,r4,r1
-add r6,r3,r5
-
-mov r7,12
-mov r8,1
-mul r9,r7,r7
-mul r10,r9,r7
-mul r11,r8,r8
-mul r12,r11,r8
-add r13,r10,r12
+bgt.exit
+add a,a,1
+.flagIncrease:
+add flag ,flag,1
+.exit:
+exit
+mov flag,r0
